@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Page Image Switch</title>
+    <style>
+        /* Make the image fill the entire viewport */
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            background-color: black;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <img id="fullPageImage" src="img1.jpg" alt="Full Page Image" onclick="switchImage()">
+
+    <script>
+        // Function to switch image source from img1.jpg to img2.jpg
+        function switchImage() {
+            const img = document.getElementById("fullPageImage");
+            if (img.src.includes("img1.jpg")) {
+                img.src = "img2.jpg";
+            }
+        }
+    </script>
+</body>
+</html>
